@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Our Farms | GreenHive Farms</title>
+<style>
+	body {
+		font-family: system-ui, sans-serif;
+		background-color: #f4f9f4;
+		color: #2c3e2e;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	header {
+		background-color: #ffffff;
+		padding: 15px 30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		z-index: 10;
+	}
+
+	#logo {
+		font-weight: 800;
+		font-size: 20px;
+		color: #1e4620;
+		text-decoration: none;
+	}
+
+	nav {
+		display: flex;
+		align-items: center;
+	}
+
+	#menu-toggle {
+		display: none;
+	}
+
+	label[for="menu-toggle"] {
+		display: none;
+		font-size: 24px;
+		color: #1e4620;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	ul {
+		display: flex;
+		align-items: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		background-color: transparent;
+		border: none;
+		border-radius: 0;
+	}
+
+	ul li {
+		margin-right: 20px;
+	}
+
+	ul li:last-child {
+		margin-right: 0;
+	}
+
+	ul li a {
+		text-decoration: none;
+		color: #2c3e2e;
+		font-weight: 600;
+		font-size: 14px;
+		padding: 6px 0;
+		border-radius: 0;
+		background-color: transparent;
+		transition: color 0.3s ease, background-color 0.3s ease;
+	}
+
+	ul li a:hover,
+	ul li a.active {
+		color: #1e4620;
+		background-color: #eaf5eb;
+	}
+
+	@media (max-width: 850px) {
+		label[for="menu-toggle"] {
+			display: block;
+		}
+
+		ul {
+			display: none;
+			position: absolute;
+			top: 100%;
+			right: 30px;
+			flex-direction: column;
+			align-items: stretch;
+			border-radius: 12px;
+			padding: 10px 0;
+			width: 220px;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+			border: 1px solid #d0ded1;
+			background-color: #ffffff;
+			z-index: 1000;
+		}
+
+		#menu-toggle:checked ~ ul {
+			display: flex;
+		}
+
+		ul li {
+			margin: 0;
+		}
+		ul li a {
+			padding: 12px 20px;
+			border-radius: 0;
+			white-space: nowrap;
+			display: block;
+		}
+	}
+
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 40px 20px;
+        flex: 1;
+    }
+	
+    h1 {
+        text-align: center;
+        color: #1e4620;
+        margin-bottom: 30px;
+    }
+	
+	h2 {
+		color: #2e6f40;
+		font-size: 18px;
+		margin: 30px 0 15px 0;
+		font-weight: bold;
+		text-transform: uppercase;
+		border-bottom: 2px solid #e2eee2;
+		padding-bottom: 5px;
+	}
+
+	footer {
+		background-color: #1e4620;
+		color: #ffffff;
+		text-align: center;
+		padding: 20px;
+		font-size: 14px;
+		margin-top: auto;
+	}
+	
+	.hero-farm{
+		text-align:center;
+		margin-bottom:40px;
+	}
+	.hero-farm img{
+		width:100%;
+		max-width:700px;
+		border-radius:10px;
+	}
+
+	.farm-section{
+		margin-top:40px;
+	}
+
+	.farm-grid{
+		display:grid;
+		grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+		gap:20px;
+	}
+
+	.farm-card{
+		background:white;
+		padding:20px;
+		border-radius:10px;
+		box-shadow:0 2px 5px rgba(0,0,0,0.1);
+	}
+
+	.produce-table{
+		width:100%;
+		border-collapse:collapse;
+		margin-top:15px;
+	}
+
+	.produce-table th,
+	.produce-table td{
+		border:1px solid #999;
+		padding:10px;
+	}
+
+	.produce-table th{
+		background:#dff0df;
+	}
+
+	.gallery-farm{
+		display:grid;
+		grid-template-columns:repeat(3,1fr);
+		gap:15px;
+	}
+	
+	.gallery-farm img{
+		width:100%;
+		height:200px;
+		object-fit:cover;
+		border-radius:10px;
+	}
+
+	.gallery-farm img{
+		width:100%;
+		border-radius:10px;
+	}
+	
+</style>
+</head>
+<body>
+
+<header> 
+    <a href="index.html" id="logo">🌿 GreenHive Farms</a>
+
+    <nav>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle">☰</label>
+
+        <ul>
+	        <li><a href="index.html" >Homepage</a></li>
+            <li><a href="About Us.html">About us</a></li>
+            <li><a href="Our Farms.html" class="active">Our farm</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="Events.html">Activities/ Events</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+            <li><a href="FAQ.html">FAQ</a></li>
+            <li><a href="Contact Us.html">Contact us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero-farm">
+        <h1>Our Farms</h1>
+
+        <img src="gambar/farm-main.jpg" alt="GreenHive Farm">
+
+        <p>
+            GreenHive Farms is committed to sustainable urban agriculture through
+            innovative farming technologies. We use hydroponics, vertical farming,
+            and smart monitoring systems to grow fresh produce while minimizing
+            environmental impact.
+        </p>
+    </section>
+
+    <section class="farm-section">
+        <h2>Our Farming Technologies</h2>
+
+        <div class="farm-grid">
+
+            <div class="farm-card">
+                <h3>Hydroponic Farming</h3>
+                <p>
+                    Plants are grown in nutrient-rich water instead of soil,
+                    allowing faster growth and efficient water usage.
+                </p>
+            </div>
+
+            <div class="farm-card">
+                <h3>Vertical Farming</h3>
+                <p>
+                    Crops are cultivated in stacked layers to maximize space
+                    and improve productivity in urban areas.
+                </p>
+            </div>
+
+            <div class="farm-card">
+                <h3>Smart Sensors</h3>
+                <p>
+                    Environmental sensors monitor temperature, humidity and
+                    nutrients to maintain ideal growing conditions.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="farm-section">
+        <h2>Our Farm Locations</h2>
+
+        <table class="produce-table">
+            <tr>
+                <th>Farm Name</th>
+                <th>Location</th>
+                <th>Main Technology</th>
+            </tr>
+
+            <tr>
+                <td>Central Urban Farm</td>
+                <td>Bandar Seri Begawan</td>
+                <td>Hydroponics</td>
+            </tr>
+
+            <tr>
+                <td>Green Valley Farm</td>
+                <td>Tutong</td>
+                <td>Vertical Farming</td>
+            </tr>
+
+            <tr>
+                <td>Smart Grow Centre</td>
+                <td>Belait</td>
+                <td>Smart Sensors</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="farm-section">
+        <h2>Fresh Produce</h2>
+
+        <table class="produce-table">
+            <tr>
+                <th>Produce</th>
+                <th>Category</th>
+                <th>Growing Method</th>
+            </tr>
+
+            <tr>
+                <td>Lettuce</td>
+                <td>Vegetable</td>
+                <td>Hydroponics</td>
+            </tr>
+
+            <tr>
+                <td>Basil</td>
+                <td>Herb</td>
+                <td>Vertical Farming</td>
+            </tr>
+
+            <tr>
+                <td>Mint</td>
+                <td>Herb</td>
+                <td>Hydroponics</td>
+            </tr>
+
+            <tr>
+                <td>Microgreens</td>
+                <td>Specialty Crop</td>
+                <td>Indoor Farming</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="farm-section">
+        <h2>Farm Gallery</h2>
+
+        <div class="gallery-farm">
+            <img src="gambar/farm1.jpg" alt="Hydroponic Farm">
+            <img src="gambar/farm2.jpg" alt="Vertical Farm">
+            <img src="gambar/farm3.jpg" alt="Fresh Produce">
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    &copy; GreenHive Farms
+</footer>
+
+</body>
+</html>
+ 

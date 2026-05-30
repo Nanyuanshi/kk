@@ -1,0 +1,365 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GreenHive Farms</title>
+<style>
+	body {
+		font-family: system-ui, sans-serif;
+		background-color: #f4f9f4;
+		color: #2c3e2e;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+	
+	header {
+		background-color: #ffffff;
+		padding: 15px 30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		z-index: 10;
+	}
+	
+	#logo {
+		font-weight: 800;
+		font-size: 20px;
+		color: #1e4620;
+		text-decoration: none;
+	}
+	
+	nav {
+		display: flex;
+		align-items: center;
+	}
+	
+	#menu-toggle {
+		display: none;
+	}
+	
+	label[for="menu-toggle"] {
+		display: none;
+		font-size: 24px;
+		color: #1e4620;
+		cursor: pointer;
+		user-select: none;
+	}
+	
+	ul {
+		display: flex;
+		align-items: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		background-color: transparent;
+		border: none;
+		border-radius: 0;
+	}
+	
+	ul li {
+		margin-right: 20px;
+	}
+	
+	ul li:last-child {
+		margin-right: 0;
+	}
+	
+	ul li a {
+		text-decoration: none;
+		color: #2c3e2e;
+		font-weight: 600;
+		font-size: 14px;
+		padding: 6px 0;
+		border-radius: 0;
+		background-color: transparent;
+		transition: color 0.3s ease, background-color 0.3s ease;
+	}
+	
+	ul li a:hover,
+	ul li a.active {
+		color: #1e4620;
+		background-color: #eaf5eb;
+	}
+
+	@media (max-width: 850px) {
+		label[for="menu-toggle"] {
+			display: block;
+		}
+		
+		ul {
+			display: none;
+			position: absolute;
+			top: 100%;
+			right: 30px;
+			flex-direction: column;
+			align-items: stretch;
+			border-radius: 12px;
+			padding: 10px 0;
+			width: 220px;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+			border: 1px solid #d0ded1;
+			background-color: #ffffff;
+			z-index: 1000;
+		}
+		
+		#menu-toggle:checked ~ ul {
+			display: flex;
+		}
+		
+		ul li {
+			margin: 0;
+		}
+		
+		ul li a {
+			padding: 12px 20px;
+			border-radius: 0;
+			white-space: nowrap;
+			display: block;
+		} 
+	}
+
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 40px 20px;
+        flex: 1;
+    }
+
+
+
+    h1 {
+        text-align: center;
+        color: #1e4620;
+        margin-bottom: 30px;
+    }
+	
+	p {
+		color: #2c3e2e;
+		font-size: 16px;
+		line-height: 1.6;
+		margin: 0 0 20px 0;
+	}
+
+	/* POLAROID CARDS */
+
+	.card-container{
+		display:flex;
+		justify-content:space-between;
+		align-items:stretch;
+		gap:20px;
+		flex-wrap:nowrap;
+		margin-top:40px;
+	}
+
+	.card{
+		background:white;
+		width:30%;
+		padding:15px;
+		border-radius:15px;
+		box-shadow:0 4px 10px rgba(0,0,0,0.1);
+		text-align:center;
+	}
+
+	.card img{
+		width:100%;
+		height:180px;
+		object-fit:cover;
+		border-radius:10px;
+	}
+
+	.card h3{
+		color:#1e4620;
+	}
+
+	.card p{
+		line-height:1.6;
+	}
+
+
+	/* RELATIVE IMAGE LINKS */
+
+	.links-section{
+		display:flex;
+		justify-content:center;
+		gap:40px;
+		flex-wrap:wrap;
+		margin-top:50px;
+	}
+
+	.link-card{
+		background:white;
+		width:320px;
+		padding:15px;
+		border-radius:15px;
+		box-shadow:0 4px 10px rgba(0,0,0,0.1);
+		text-align:center;
+	}
+
+	.link-card img{
+		width:100%;
+		height:200px;
+		object-fit:cover;
+		border-radius:12px;
+		transition:0.3s;
+	}
+
+	.link-card img:hover{
+		transform:scale(1.05);
+	}
+
+	.link-card h3{
+		margin-top:15px;
+		color:#1e4620;
+	}
+
+	.link-card p{
+		margin-top:10px;
+		line-height:1.5;
+	}
+
+
+	/* CONTACT BUTTON */
+
+	.contact-button{
+		text-align:center;
+		margin-top:50px;
+	}
+
+	.btn{
+		background:#1e4620;
+		color:white;
+		padding:12px 25px;
+		text-decoration:none;
+		border-radius:8px;
+		font-weight:bold;
+	}
+
+	.btn:hover{
+		background:#2f6b33;
+	}
+
+	footer {
+		background-color: #1e4620;
+		color: #ffffff;
+		text-align: center;
+		padding: 20px;
+		font-size: 14px;
+		margin-top: auto;
+	}	
+</style>
+</head>
+<body>
+
+<header> 
+    <a href="index.html" id="logo">🌿 GreenHive Farms</a>
+
+    <nav>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle">☰</label>
+
+        <ul>  <!--tambah class="active" macam dibawah ani arah yang kamu buat, example: ani kamu buat index(hompage) so buat atu arah line index--> 
+            <li><a href="index.html" class="active" >Homepage</a></li>
+            <li><a href="About Us.html">About us</a></li>
+            <li><a href="Our Farms.html">Our farm</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="Events.html">Activities/ Events</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+            <li><a href="FAQ.html">FAQ</a></li>
+            <li><a href="Contact Us.html">Contact us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<section class="intro">
+
+    <h1>Welcome to GreenHive Farms</h1>
+
+    <p>
+        GreenHive Farms is a tech-driven urban farming company dedicated to sustainable agriculture through hydroponics, vertical farming, and smart sensor technology. Located in the heart of the city, we aim to provide fresh produce while minimizing environmental impact.
+    </p>
+
+    <p>
+        Our mission is to make healthy food more accessible, educate the community about sustainable farming, and inspire future generations to embrace environmentally friendly agricultural practices.
+    </p>
+
+</section>
+
+
+
+<section class="card-container">
+
+
+    <div class="card">
+
+        <a href="AboutUs.html">
+            <img src="gambar/about.png" alt="About Us">
+        </a>
+
+        <h3>About Us</h3>
+
+        <p>
+            Discover the story behind GreenHive Farms and learn about our mission, vision, dedicated team, and commitment to creating a greener and more sustainable future through modern agriculture.
+        </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+        <a href="OurFarm.html">
+            <img src="gambar/farm.png" alt="Our Farm">
+        </a>
+
+        <h3>Our Farm</h3>
+		
+        <p>
+            Explore our hydroponic systems, vertical farming facilities, and innovative technologies that help us grow fresh vegetables efficiently while conserving water and resources.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <a href="gallery.html">
+            <img src="gambar/gallery.png" alt="Gallery">
+        </a>
+
+        <h3>Gallery</h3>
+
+        <p>
+            Browse photos of our farm, greenhouse facilities, educational workshops, community events, and the fresh produce that makes GreenHive Farms unique.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<section class="contact-button">
+
+    <a href="Contact Us.html" class="btn">
+        Contact Us
+    </a>
+
+</section>
+</main>
+
+<footer>
+    &copy; GreenHive Farms
+</footer>
+
+</body>
+</html>
+ 

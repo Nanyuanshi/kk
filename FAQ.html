@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FAQ | GreenHive Farms</title>
+<style>
+	body {
+		font-family: system-ui, sans-serif;
+		background-color: #f4f9f4;
+		color: #2c3e2e;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+	
+	header {
+		background-color: #ffffff;
+		padding: 15px 30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		z-index: 10;
+	}
+	
+	#logo {
+		font-weight: 800;
+		font-size: 20px;
+		color: #1e4620;
+		text-decoration: none;
+	}
+	
+	nav {
+		display: flex;
+		align-items: center;
+	}
+	
+	#menu-toggle {
+		display: none;
+	}
+	
+	label[for="menu-toggle"] {
+		display: none;
+		font-size: 24px;
+		color: #1e4620;
+		cursor: pointer;
+		user-select: none;
+	}
+	
+	ul {
+		display: flex;
+		align-items: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		background-color: transparent;
+		border: none;
+		border-radius: 0;
+	}
+	
+	ul li {
+		margin-right: 20px;
+	}
+	
+	ul li:last-child {
+		margin-right: 0;
+	}
+	
+	ul li a {
+		text-decoration: none;
+		color: #2c3e2e;
+		font-weight: 600;
+		font-size: 14px;
+		padding: 6px 0;
+		border-radius: 0;
+		background-color: transparent;
+		transition: color 0.3s ease, background-color 0.3s ease;
+	}
+	
+	ul li a:hover,
+	ul li a.active {
+		color: #1e4620;
+		background-color: #eaf5eb;
+	}
+
+	@media (max-width: 850px) {
+		label[for="menu-toggle"] {
+			display: block;
+		}
+		
+		ul {
+			display: none;
+			position: absolute;
+			top: 100%;
+			right: 30px;
+			flex-direction: column;
+			align-items: stretch;
+			border-radius: 12px;
+			padding: 10px 0;
+			width: 220px;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+			border: 1px solid #d0ded1;
+			background-color: #ffffff;
+			z-index: 1000;
+		}
+		
+		#menu-toggle:checked ~ ul {
+			display: flex;
+		}
+		
+		ul li {
+			margin: 0;
+		}
+		
+		ul li a {
+			padding: 12px 20px;
+			border-radius: 0;
+			white-space: nowrap;
+			display: block;
+		}
+	}
+
+	main {
+		max-width: 800px;
+		margin: 0 auto;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 40px 20px;
+		flex: 1;
+	}
+
+    h1 {
+        text-align: center;
+        color: #1e4620;
+        margin-bottom: 30px;
+    }
+
+	main > p {
+		color: #2c3e2e;
+		font-size: 16px;
+		line-height: 1.6;
+		margin: 0 0 20px 0;
+	}
+
+	h2 {
+		color: #2e6f40;
+		font-size: 18px;
+		margin: 30px 0 15px 0;
+		font-weight: bold;
+		text-transform: uppercase;
+		border-bottom: 2px solid #e2eee2;
+		padding-bottom: 5px;
+	}
+
+	details {
+		background-color: white;
+		margin-bottom: 12px;
+		border-left: 5px solid #4caf50;
+		overflow: hidden;
+	}
+
+	summary {
+		padding: 15px;
+		font-weight: 600;
+		font-size: 16px;
+		color: #1e4620;
+		cursor: pointer;
+	}
+
+	summary:hover {
+		background: #f1f1f1;
+	}
+
+	details > p {
+		padding: 0 15px 15px 15px;
+		margin: 0;
+	}
+
+	.faq-btn {
+		float: right;
+		display: inline-block;
+		padding: 12px;
+		background-color: #1e4620;
+		color: white;
+		text-decoration: none;
+		border-radius: 15px;
+		font-weight: bold;
+	}
+
+	footer {
+		background-color: #1e4620;
+		color: #ffffff;
+		text-align: center;
+		padding: 20px;
+		font-size: 14px;
+		margin-top: auto;
+	}
+</style>
+</head>
+<body>
+<header>
+    <a href="index.html" id="logo">🌿 GreenHive Farms</a>
+    <nav>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle">☰</label>
+        <ul>
+            <li><a href="index.html" >Homepage</a></li>
+            <li><a href="About Us.html">About us</a></li>
+            <li><a href="Our Farms.html">Our farm</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="Events.html">Activities/ Events</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+            <li><a href="FAQ.html" class="active">FAQ</a></li>
+            <li><a href="Contact Us.html">Contact us</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h1>Frequently Asked Questions</h1>
+    <p>Have questions? Find simple answers here or contact us if you need more help.</p>
+
+    <h2>General & Mission</h2>
+    <details>
+        <summary>What is GreenHive Farms?</summary>
+        <p>GreenHive Farms is a city-based farm using technology to grow fresh vegetables and herbs in a clean, eco-friendly way.</p>
+    </details>
+    <details>
+        <summary>What is your mission?</summary>
+        <p>We want to provide fresh, healthy food to our community while protecting the environment by using smart farming methods.</p>
+    </details>
+    <details>
+        <summary>What does "urban farming" mean?</summary>
+        <p>It means growing food inside the city using space-saving methods like vertical farming and hydroponics.</p>
+    </details>
+
+    <h2>Technology & Growing Methods</h2>
+    <details>
+        <summary>What is hydroponics?</summary>
+        <p>Hydroponics is growing plants without soil, using water mixed with nutrients to feed the plants directly.</p>
+    </details>
+    <details>
+        <summary>How does vertical farming work?</summary>
+        <p>We grow plants in stacked layers to save space and grow more food in a small area.</p>
+    </details>
+    <details>
+        <summary>What is smart sensor technology?</summary>
+        <p>We use sensors to check and control water, light, and nutrients to help plants grow their best.</p>
+    </details>
+    <details>
+        <summary>Do you use pesticides or chemicals?</summary>
+        <p>No. Our indoor farm is clean and controlled, so we don’t need harmful chemicals.</p>
+    </details>
+    <details>
+        <summary>Are your vegetables organic?</summary>
+        <p>Our plants are grown naturally without pesticides, but hydroponic farms have different organic rules.</p>
+    </details>
+    <details>
+        <summary>How do you save water?</summary>
+        <p>We recycle water in our system, using up to 90% less water than regular farms.</p>
+    </details>
+
+    <h2>Products & Availability</h2>
+    <details>
+        <summary>What do you grow?</summary>
+        <p>We grow leafy greens like lettuce and spinach, herbs like basil and cilantro, and fresh microgreens.</p>
+    </details>
+    <details>
+        <summary>Where can I buy your produce?</summary>
+        <p>You can buy from our farm store or order online for local delivery soon.</p>
+    </details>
+    <details>
+        <summary>Do you supply restaurants?</summary>
+        <p>Yes, we work with local chefs to provide fresh ingredients daily.</p>
+    </details>
+    <details>
+        <summary>How long do your vegetables stay fresh?</summary>
+        <p>Because we harvest right before delivery and grow without soil, our produce stays fresh longer than store-bought.</p>
+    </details>
+
+    <h2>Tours & Community Events</h2>
+    <details>
+        <summary>Do you offer farm tours?</summary>
+        <p>Yes, we have guided tours for individuals, schools, and groups to see how we farm with technology.</p>
+    </details>
+    <details>
+        <summary>How do I book a tour?</summary>
+        <p>You can book your visit on our website’s booking page soon.</p>
+    </details>
+    <details>
+        <summary>Are workshops good for kids?</summary>
+        <p>Yes, we have fun and easy workshops designed for children to learn about plants and farming.</p>
+    </details>
+    <details>
+        <summary>What is a farm-to-table experience?</summary>
+        <p>You pick fresh veggies and enjoy meals made with them, all at our farm.</p>
+    </details>
+
+    <h2>Visiting Us</h2>
+    <details>
+        <summary>Where is GreenHive Farms?</summary>
+        <p>We are located in the city center. Check our Contact page for the address and hours.</p>
+    </details>
+    <details>
+        <summary>When is the farm open?</summary>
+        <p>We are open Tuesday to Saturday, 9 AM to 5 PM. Tours need to be booked in advance.</p>
+    </details>
+
+    <a href="Contact Us.html" class="faq-btn">Still need help? Contact us!</a>
+</main>
+<footer>
+    &copy; GreenHive Farms
+</footer>
+</body>
+</html>

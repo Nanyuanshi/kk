@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Activities / Events | GreenHive Farms</title>
+<style>
+	body {
+		font-family: system-ui, sans-serif;
+		background-color: #f4f9f4;
+		color: #2c3e2e;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+	
+	header {
+		background-color: #ffffff;
+		padding: 15px 30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		z-index: 10;
+	}
+	
+	#logo {
+		font-weight: 800;
+		font-size: 20px;
+		color: #1e4620;
+		text-decoration: none;
+	}
+	
+	nav {
+		display: flex;
+		align-items: center;
+	}
+	
+	#menu-toggle {
+		display: none;
+	}
+	
+	label[for="menu-toggle"] {
+		display: none;
+		font-size: 24px;
+		color: #1e4620;
+		cursor: pointer;
+		user-select: none;
+	}
+	
+	ul {
+		display: flex;
+		align-items: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		background-color: transparent;
+		border: none;
+		border-radius: 0;
+	}
+	
+	ul li {
+		margin-right: 20px;
+	}
+	
+	ul li:last-child {
+		margin-right: 0;
+	}
+	
+	ul li a {
+		text-decoration: none;
+		color: #2c3e2e;
+		font-weight: 600;
+		font-size: 14px;
+		padding: 6px 0;
+		border-radius: 0;
+		background-color: transparent;
+		transition: color 0.3s ease, background-color 0.3s ease;
+	}
+	
+	ul li a:hover,
+	ul li a.active {
+		color: #1e4620;
+		background-color: #eaf5eb;
+	}
+	
+	main {
+		max-width: 800px;
+		margin: 0 auto;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 40px 20px;
+		flex: 1;
+	}
+
+    h1 {
+        text-align: center;
+        color: #1e4620;
+        margin-bottom: 30px;
+    }
+	
+	main p {
+		color: #2c3e2e;
+		font-size: 16px;
+		line-height: 1.6;
+		margin: 0 0 20px 0;
+	}
+	
+	h2 {
+		color: #2e6f40;
+		font-size: 18px;
+		margin: 30px 0 15px 0;
+		font-weight: bold;
+		text-transform: uppercase;
+		border-bottom: 2px solid #e2eee2;
+		padding-bottom: 5px;
+	}
+	
+	.card-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+		padding: 20px 0;
+	}
+	
+	.card {
+		border: 1px solid #ddd;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+	}
+	
+	.card img {
+		width: 100%;
+		height: 150px;
+		object-fit: cover;
+		display: block;
+		cursor: pointer;
+	}
+
+	.card img.large {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		object-fit: contain;
+		background: rgba(0,0,0,0.8);
+		z-index: 99;
+	}
+
+	summary {
+		padding: 15px;
+		font-weight: bold;
+		cursor: pointer;
+		background: #f9f9f9;
+		list-style: none;
+	}
+	
+	summary:hover {
+		background: #f1f1f1;
+	}
+	
+	.content {
+		padding: 15px;
+		border-top: 1px solid #eee;
+	}
+
+	@media (max-width: 850px) {
+		label[for="menu-toggle"] {
+			display: block;
+		}
+		
+		ul {
+			display: none;
+			position: absolute;
+			top: 100%;
+			right: 30px;
+			flex-direction: column;
+			align-items: stretch;
+			border-radius: 12px;
+			padding: 10px 0;
+			width: 220px;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+			border: 1px solid #d0ded1;
+			background-color: #ffffff;
+			z-index: 1000;
+		}
+		
+		#menu-toggle:checked ~ ul {
+			display: flex;
+		}
+		
+		ul li {
+			margin: 0;
+		}
+		
+		ul li a {
+			padding: 12px 20px;
+			border-radius: 0;
+			white-space: nowrap;
+			display: block;
+		}
+		
+		.card-grid {
+			grid-template-columns: 1fr;
+		} 
+	}
+
+	footer {
+		background-color: #1e4620;
+		color: #ffffff;
+		text-align: center;
+		padding: 20px;
+		font-size: 14px;
+		margin-top: auto;
+	}
+</style>
+</head>
+
+<body>
+<header>
+    <a href="index.html" id="logo">🌿 GreenHive Farms</a>
+	
+    <nav>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle">☰</label>
+		
+        <ul>
+            <li><a href="index.html" >Homepage</a></li>
+            <li><a href="About Us.html">About us</a></li>
+            <li><a href="Our Farms.html">Our farm</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="Events.html" class="active">Activities/ Events</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+            <li><a href="FAQ.html" >FAQ</a></li>
+            <li><a href="Contact Us.html">Contact us</a></li>
+        </ul>
+		
+    </nav>
+</header>
+
+<main>
+    <h1>Activities & Events</h1>
+    <p>Discover the exciting activities and events happening at GreenHive Farms. Join us to learn, explore, and enjoy sustainable urban farming experiences.</p>
+    
+	<h2>Upcoming Events</h2>
+    <div class="card-grid">
+        <div class="card">
+            <img src="Gambar/Farm Tour & Workshop.png" alt="Farm Tour & Workshop" onclick= "this.classList.toggle('large')">
+            <details>
+                <summary>Farm Tour & Workshop - June 10, 2026</summary>
+                <div class="content">
+                    <p>Come join us for a farm tour and a simple workshop on how we grow plants using water and sensors. Everyone is welcome!</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="card">
+            <img src="Gambar/Farm-to-Table Dinner.jpg" alt="Farm-to-Table Dinner" onclick= "this.classList.toggle('large')">
+            <details>
+                <summary>Farm-to-Table Dinner - July 15, 2026</summary>
+                <div class="content">
+                    <p>Enjoy a special dinner made with fresh veggies from our farm. Pick your own produce and taste the farm’s best dishes.</p>
+                </div>
+            </details>
+        </div>
+		
+        <div class="card">
+            <img src="Gambar/Kids’ Learning Workshop.jpg" alt="Kids’ Learning Workshop" onclick= "this.classList.toggle('large')">
+            <details>
+                <summary>Kids’ Learning Workshop - August 5, 2026</summary>
+                <div class="content">
+                    <p>Fun and easy sessions for kids to learn about plants and how to grow food in the city.</p>
+                </div>
+            </details>
+        </div>
+		
+        <div class="card">
+            <img src="Gambar/Tech in Farming Demo.jpg" alt="Tech in Farming Demo" onclick= "this.classList.toggle('large')">
+            <details>
+                <summary>Tech in Farming Demo - September 12, 2026</summary>
+                <div class="content">
+                    <p>See how we use smart sensors and technology to grow healthy plants. Learn how tech helps farming.</p>
+                </div>
+            </details>
+        </div>
+		
+        <div class="card">
+            <img src="Gambar/Community Harvest Festival.jpg" alt="Community Harvest Festival" onclick= "this.classList.toggle('large')">
+            <details>
+                <summary>Community Harvest Festival - October 20, 2026</summary>
+                <div class="content">
+                    <p>Celebrate the harvest season with music, food, and picking fresh vegetables with friends and family.</p>
+                </div>
+            </details>
+        </div>
+		
+        <div class="card">
+            <img src="Gambar/Sustainability Talk & Q&A.jpg" alt="Sustainability Talk & Q&A" onclick= "this.classList.toggle('large')">
+            <details>
+                <summary>Sustainability Talk & Q&A - November 15, 2026</summary>
+                <div class="content">
+                    <p>Join us for a talk about how urban farming helps the environment, followed by a question and answer session.</p>
+                </div>
+            </details>
+        </div>
+				
+    </div>
+	
+    <h2>Regular Activities</h2>
+    <div class="card-grid">
+        <div class="card">
+            <img src="Gambar/Weekly Harvesting Sessions.jpg" alt="Weekly Harvesting Sessions" onclick= "this.classList.toggle('large')">
+            <details>
+                <summary>Weekly Harvesting Sessions</summary>
+                <div class="content">
+                    <p>Fun and easy sessions for kids to learn about plants and how to grow food in the city.</p>
+                </div>
+            </details>
+        </div>
+		
+        <div class="card">
+            <img src="Gambar/Community Gardening Days.jpg" alt="Community Gardening Days"onclick= "this.classList.toggle('large')">
+            <details>
+                <summary>Community Gardening Days</summary>
+                <div class="content">
+                    <p>Join fellow community members every first Sunday of the month to help maintain the farm and share gardening tips.</p>
+                </div>
+            </details>
+        </div>
+		
+        <div class="card">
+            <img src="Gambar/Seasonal Planting Workshops.jpg" alt="Seasonal Planting Workshops" onclick= "this.classList.toggle('large')">
+            <details>
+                <summary>Seasonal Planting Workshops</summary>
+                <div class="content">
+                    <p>Learn how to plant different crops each season with help from our expert farmers.</p>
+                </div>
+            </details>
+        </div>
+		
+		<div class="card">
+            <img src="Gambar/Sensor Setup Training.jpg" alt="Sensor Setup Training" onclick= "this.classList.toggle('large')">
+            <details>
+                <summary>Sensor Setup Training</summary>
+                <div class="content">
+                    <p>Learn how to set up and use smart sensors to monitor plant health and growth.</p>
+                </div>
+            </details>
+        </div>
+		
+        <div class="card">
+            <img src="Gambar/Hydroponics Basics Class.jpg" alt="Hydroponics Basics Class" onclick= "this.classList.toggle('large')">
+            <details>
+                <summary>Hydroponics Basics Class</summary>
+                <div class="content">
+                    <p>A simple class to teach how to grow plants without soil using water and nutrients.</p>
+                </div>
+            </details>
+        </div>
+
+        <div class="card">
+            <img src="Gambar/Farm Volunteer Program.jpg" alt="Farm Volunteer Program" onclick= "this.classList.toggle('large')">
+            <details>
+                <summary>Farm Volunteer Program</summary>
+                <div class="content">
+                    <p>Volunteer regularly to help with daily farm tasks and learn about urban farming hands-on.</p>
+                </div>
+            </details>
+        </div>
+		
+    </div>
+
+</main>
+<footer>
+    &copy; GreenHive Farms
+</footer>
+</body>
+</html>

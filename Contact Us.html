@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us | GreenHive Farms</title>
+<style>
+	body {
+		font-family: system-ui, sans-serif;
+		background-color: #f4f9f4;
+		color: #2c3e2e;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+	
+	header {
+		background-color: #ffffff;
+		padding: 15px 30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		z-index: 10;
+	}
+	
+	#logo {
+		font-weight: 800;
+		font-size: 20px;
+		color: #1e4620;
+		text-decoration: none;
+	}
+	
+	nav {
+		display: flex;
+		align-items: center;
+	}
+	
+	#menu-toggle {
+		display: none;
+	}
+	
+	label[for="menu-toggle"] {
+		display: none;
+		font-size: 24px;
+		color: #1e4620;
+		cursor: pointer;
+		user-select: none;
+	}
+	
+	ul {
+		display: flex;
+		align-items: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		background-color: transparent;
+		border: none;
+		border-radius: 0;
+	}
+	
+	ul li {
+		margin-right: 20px;
+	}
+	
+	ul li:last-child {
+		margin-right: 0;
+	}
+	
+	ul li a {
+		text-decoration: none;
+		color: #2c3e2e;
+		font-weight: 600;
+		font-size: 14px;
+		padding: 6px 0;
+		border-radius: 0;
+		background-color: transparent;
+		transition: color 0.3s ease, background-color 0.3s ease;
+	}
+	
+	ul li a:hover,
+	ul li a.active {
+		color: #1e4620;
+		background-color: #eaf5eb;
+	}
+	
+	@media (max-width: 850px) {
+		label[for="menu-toggle"] {
+			display: block;
+		}
+
+		ul {
+			display: none;
+			position: absolute;
+			top: 100%;
+			right: 30px;
+			flex-direction: column;
+			align-items: stretch;
+			border-radius: 12px;
+			padding: 10px 0;
+			width: 220px;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+			border: 1px solid #d0ded1;
+			background-color: #ffffff;
+			z-index: 1000;
+		}
+
+		#menu-toggle:checked ~ ul {
+			display: flex;
+		}
+
+		ul li {
+			margin: 0;
+		}
+		ul li a {
+			padding: 12px 20px;
+			border-radius: 0;
+			white-space: nowrap;
+			display: block;
+		}
+	}
+	
+    main {
+        max-width: 1000px;
+        margin: auto;
+        padding: 40px 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #1e4620;
+        margin-bottom: 30px;
+    }
+
+    .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .contact-info,
+    .contact-form {
+        background-color: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .contact-info img {
+        width: 100%;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+
+    .contact-info p {
+    line-height: 1.2;
+    margin: 5px 0;
+	}
+
+    form input,
+    form textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+
+    form textarea {
+        resize: vertical;
+        height: 120px;
+    }
+
+    form button {
+        background-color: #1e4620;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    form button:hover {
+        background-color: #2f6a34;
+    }
+
+	footer {
+		background-color: #1e4620;
+		color: #ffffff;
+		text-align: center;
+		padding: 20px;
+		font-size: 14px;
+		margin-top: auto;
+	}
+
+    @media (max-width: 800px) {
+        .contact-container {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+
+<body>
+<header>
+    <a href="index.html" id="logo">🌿 GreenHive Farms</a>
+	
+    <nav>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle">☰</label>
+		
+        <ul>
+            <li><a href="index.html" >Homepage</a></li>
+            <li><a href="About Us.html">About us</a></li>
+            <li><a href="Our Farms.html">Our farm</a></li>
+            <li><a href="Services.html">Services</a></li>
+            <li><a href="Events.html">Activities/ Events</a></li>
+            <li><a href="Gallery.html">Gallery</a></li>
+            <li><a href="FAQ.html">FAQ</a></li>
+            <li><a href="Contact Us.html" class="active">Contact us</a></li>
+        </ul>
+		
+    </nav>
+</header>
+
+<main>
+
+    <h1>Contact Us</h1>
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <img src="Gambar\Contact Us.jpeg" alt="GreenHive Farms">
+
+            <p><strong>Address:</strong><br>
+            GreenHive Farms, Bandar Seri Begawan, Brunei Darussalam</p>
+
+            <p><strong>Phone:</strong><br>
+            +673 123 4567</p>
+
+            <p><strong>Email:</strong><br>
+            Greenhivefarms@gmail.com</p>
+
+            <p><strong>Opening Hours:</strong><br>
+            Monday - Saturday<br>
+            8:00 AM - 5:00 PM</p>
+
+        </div>
+
+        <div class="contact-form">
+
+            <form>
+
+                <input type="text" placeholder="Your Name" required>
+
+                <input type="email" placeholder="Your Email" required>
+
+                <input type="text" placeholder="Subject">
+
+                <textarea placeholder="Your Message"></textarea>
+
+                <button type="submit">Send Message</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    &copy; GreenHive Farms
+</footer>
+
+</body>
+</html>
